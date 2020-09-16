@@ -13,6 +13,7 @@ export class CrewComponent implements OnInit {
     {name: "Ellen Ochoa", firstMission: true}
   ];
   memberBeingEdited: object = null;
+  inCrew: boolean = false;
 
   constructor() { }
 
@@ -20,9 +21,15 @@ export class CrewComponent implements OnInit {
   }
 
   add(memberName: string, isFirst: boolean) {
-    if(!this.crew.includes({name: memberName, firstMission: isFirst})){
+    for (let i=0; i < this.crew.length; i++) {
+      if(this.crew[i]['name'] === memberName) {
+          this.inCrew = true;
+      }
+  }
+  if (!this.inCrew) {
       this.crew.push({name: memberName, firstMission: isFirst});
-    }
+  }
+  this.inCrew = false;
   }  
 
   remove(member: object) {
