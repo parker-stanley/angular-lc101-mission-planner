@@ -8,7 +8,7 @@
 <div class="displayBox">
     <h3>Crew <span *ngIf="crew.length==3">Full</span></h3>
     <ol>
-        <li (mouseover)="selected = true" (mouseout)="selected = false" *ngFor="let astronaut of crew">{{astronaut.name}}</li>
+        <li (mouseover)="selected = astronaut" (mouseout)="selected = false" *ngFor="let astronaut of crew">{{astronaut.name}}</li>
     </ol>
-    <img *ngIf="selected" src="{{astronaut.photo}}">
+    <img *ngIf="selected" src="{{selected.photo}}">
 </div>
