@@ -32,5 +32,6 @@ export class CrewComponent implements OnInit {
       this.crew.splice(index,1);
     }
   }
+  // the above function was done very differently in the solutions, the above seems cleaner
 
 }
